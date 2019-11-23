@@ -205,11 +205,11 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(2)</small></div></li>
+    <li><div class="all active">全部文章<small>(3)</small></div></li>
     
         
             
-            <li><div data-rel="c">c<small>(2)</small></div>
+            <li><div data-rel="c">c<small>(3)</small></div>
                 
             </li>
             
@@ -225,7 +225,7 @@
     </div>
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="2">
+<input type="hidden" id="yelog_site_posts_number" value="3">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -281,6 +281,14 @@
             <span class="post-date" title="2019-11-15 19:08:18">2019/11/15</span>
         </a>
         
+        <a  class="c "
+           href="/2019/11/23/%EF%BF%BD%EF%BF%BD%EF%BF%BD%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5-%E8%BE%93%E5%87%BA/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="字符串和格式化输入/输出">字符串和格式化输入/输出</span>
+            <span class="post-date" title="2019-11-23 16:54:55">2019/11/23</span>
+        </a>
+        
     </nav>
 </div>
     </div>
@@ -311,7 +319,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-11-23 16:19:14'>2019-11-18 13:23</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-23 16:48:59'>2019-11-18 13:23</time>
         
     </div>
     <div class="article-meta">
@@ -352,8 +360,18 @@
         <h1 id="可移植类型：stdint-h和inttypes-h"><a href="#可移植类型：stdint-h和inttypes-h" class="headerlink" title="可移植类型：stdint.h和inttypes.h"></a>可移植类型：stdint.h和inttypes.h</h1><blockquote>
 <p>c语言提供了许多有用的整数类型。但是某些类型名在不同系统中的功能不一样。c99新增了两个头文件stdint.h和inttypes.h<br>以确保c语言的类型在各系统的功能一样的。</p>
 </blockquote>
-<p>stdint.h中定义了更多类型</p>
+<p>stdint.h中定义了更多类型，例如int32_t表示有32位有效的有符号整数类型，在32位的系统中会把int32_t作为int的别名，如果int为16位.long为32位，会把int32_t作为long的别名。这样就保证了32位有符号整数始终与系统匹配。这就是**精确宽度整数类型**。
+</p>
 
+<p>如果系统不支持精确整数宽度类型，c99和c11还提供了第二类别名。**最小宽度类型**，表明是有指定最小宽度的整数类型。
+如int_least8_t表示最小8位整数类型，如果系统最小整数类型为16位，这就表示int型16位。
+</p>
+
+<p>如果关心速度而非空间，提供一种可使计算达到最快的类型集合：**最快最小宽度类型**。例如int_fast8_t被定义为*系统中
+对8位有符号值而言运算最快的整数类型*的别名</p>
+<p>系统最大整数类型。c99定义了最大的有符号整数类型intmax_t，可存储任何有效的有符号整数值。与之类似的，unitmax_t
+表示最大无符号整数类型。这些类型可能比long long和unsigned long还要大。</p>
+<p>对于这些新的类型，在inttypes.h中定义了相应的字符串宏来对应。如PRID32字符串宏代表打印32位有符号的值</p>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2586420146@qq.com </span>
     </div>
@@ -370,7 +388,7 @@
     
     <p><span class="copy-title">本文作者:</span><a  title="kangya998">kangya998</a></p>
     <p><span class="copy-title">发布时间:</span>2019-11-18, 13:23:03</p>
-    <p><span class="copy-title">最后更新:</span>2019-11-23, 16:19:14</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-23, 16:48:59</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/18/hello/" title="语言中陌生的函数类型">https://kangya998.github.io/2019/11/18/hello/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
